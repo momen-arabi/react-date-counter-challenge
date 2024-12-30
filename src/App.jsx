@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-slate-200">
+    <div className="h-screen flex items-center justify-center bg-slate-200/75">
       <div className="w-full text-center">
         <h1 className="text-4xl font-bold text-slate-900 uppercase">What day is it 🙄!</h1>
         <div className="counter-container w-4/12 grid grid-cols-2 divide-x mx-auto my-6">
@@ -26,7 +26,7 @@ function StepCounter() {
     setSteps((prev) => prev + 1);
   }
   return (
-    <div className="counter flex items-center justify-center gap-2 bg-slate-100 p-2">
+    <div className="counter rounded-md flex items-center justify-center gap-2 bg-slate-100 p-2">
       <p className="font-semibold">Steps:</p>
       <button
         onClick={handleStepDecrease}
@@ -56,7 +56,7 @@ function DayCounter() {
     setCounts((prev) => prev + 1);
   }
   return (
-    <div className="counter flex items-center justify-center gap-2 bg-slate-100 p-2 ">
+    <div className="counter rounded-md flex items-center justify-center gap-2 bg-slate-100 p-2 ">
       <p className="font-semibold">Count:</p>
       <button
         onClick={handleCountDecrease}
