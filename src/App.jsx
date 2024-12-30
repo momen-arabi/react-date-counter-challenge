@@ -2,41 +2,42 @@ import { useState } from "react";
 
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-slate-200/75">
+    <div className="h-screen flex items-center justify-center bg-slate-200">
       <div className="w-full text-center">
         <h1 className="text-4xl font-bold text-slate-900 uppercase">What day is it 🙄!</h1>
-        <div className="counter-container w-4/12 grid grid-cols-2 divide-x mx-auto my-6">
-          <StepCounter />
-          <DayCounter />
+        <div className="counter-container w-3/12 grid grid-cols-2 divide-x mx-auto my-6">
+          <Counter label="Steps" />
+          <Counter label="Count" />
         </div>
-        <h2 className="result">Today is 30</h2>
+        <Result />
       </div>
     </div>
   );
 }
 
-function StepCounter() {
-  const [steps, setSteps] = useState(1);
+function Counter({ label }) {
+  const [count, setCount] = useState(1);
 
-  function handleStepDecrease() {
-    setSteps((prev) => prev - 1);
+  function handleDecrease() {
+    setCount((prev) => prev - 1);
   }
 
-  function handleStepIncrease() {
-    setSteps((prev) => prev + 1);
+  function handleIncrease() {
+    setCount((prev) => prev + 1);
   }
+
   return (
-    <div className="counter rounded-md flex items-center justify-center gap-2 bg-slate-100 p-2">
-      <p className="font-semibold">Steps:</p>
+    <div className="counter flex items-center justify-center gap-2 bg-slate-50 p-2">
+      <p className="font-semibold">{label}:</p>
       <button
-        onClick={handleStepDecrease}
+        onClick={handleDecrease}
         className="bg-red-500 text-white w-5 h-5 flex justify-center items-center rounded-lg shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
       >
         -
       </button>
-      <span className="counter-value">{steps}</span>
+      <span className="counter-value">{count}</span>
       <button
-        onClick={handleStepIncrease}
+        onClick={handleIncrease}
         className="bg-green-500 text-white w-5 h-5 flex justify-center items-center rounded-lg shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
       >
         +
@@ -45,33 +46,18 @@ function StepCounter() {
   );
 }
 
-function DayCounter() {
-  const [counts, setCounts] = useState(1);
+function Result() {
+  const today = new Date();
+  const [date, setDate] = useState(today);
 
-  function handleCountDecrease() {
-    setCounts((prev) => prev - 1);
+  function formatDate(date) {
+    return date.toDateString();
   }
 
-  function handleCountIncrease() {
-    setCounts((prev) => prev + 1);
-  }
   return (
-    <div className="counter rounded-md flex items-center justify-center gap-2 bg-slate-100 p-2 ">
-      <p className="font-semibold">Count:</p>
-      <button
-        onClick={handleCountDecrease}
-        className="bg-red-500 text-white w-5 h-5 flex justify-center items-center rounded-lg shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
-      >
-        -
-      </button>
-      <span className="counter-value">{counts}</span>
-      <button
-        onClick={handleCountIncrease}
-        className="bg-green-500 text-white w-5 h-5 flex justify-center items-center rounded-lg shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
-      >
-        +
-      </button>
-    </div>
+    <h3 className="result">
+      Today is <strong>{formatDate(date)}</strong>
+    </h3>
   );
 }
 
