@@ -4,7 +4,7 @@ This project is a React-based application that displays a countdown to a specifi
 
 ## Features
 
-- **Date Counter**: Displays the date based on the days count and number of dsteps to increase with.
+- **Date Counter**: Displays the date based on the days count and number of steps to increase with.
 - **Responsive Design**: Ensures usability across various devices and screen sizes.
 
 ## Technologies Used
