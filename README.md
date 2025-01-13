@@ -10,6 +10,7 @@ This project is a React-based application that displays a countdown to a specifi
 
 - **React**: A JavaScript library for building user interfaces.
 - **Tailwind CSS**: A utility-first CSS framework for styling.
+- **Flowbite**: A tailwind styled components package.
 - **Vercel**: Platform used for deployment.
 
 ## Getting Started
@@ -62,6 +63,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - Styling is done using [Tailwind CSS](https://tailwindcss.com/).
+- Styled components used from [Flowbite](https://flowbite.com/).
 - Deployed on [Vercel](https://vercel.com/).
 
 For any questions or suggestions, feel free to open an issue or submit a pull request.
